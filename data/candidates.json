@@ -1,0 +1,69 @@
+{
+	[
+      {
+        "id": "c1",
+        "GroupID": "1",
+        "FullName": "Петя Иванов",
+        "ProfileURI": "https://www.linkedin.com/in/gerasim-gerasimov-b55936a5/",
+        "Skills": "Bamboo, Java, Swift, Expresso, XCUITest, white box testing, integration testing, API testing, Fluent English",
+        "Company": "Site Studio",
+        "Position": "Senior Test Automation Engineer (Java)",
+        "InvitationAccepted": "true",
+        "AcceptionDate": "12.10.2018",
+        "Note": "Адекватный",
+        "Checked": "true"
+      },
+      {
+        "id": "c2",
+        "GroupID": "1",
+        "FullName": "Петя Петров",
+        "ProfileURI": "https://www.linkedin.com/in/gerasim-gerasimov-b55936a5/",
+        "Skills": " Bamboo, Java, Swift, XCUITest, white box testing, integration testing, API testing, Fluent English",
+        "Company": "Cissco",
+        "Position": "QA Lead (Java)",
+        "InvitationAccepted": "false",
+        "AcceptionDate": "",
+        "Note": "",
+        "Checked": "false"
+      },
+      {
+        "id": "c3",
+        "GroupID": "1",
+        "FullName": "Ветер Иванович Свежий",
+        "ProfileURI": "https://www.linkedin.com/in/gerasim-gerasimov-b55936a5/",
+        "Skills": " Node.JS, Vue.JS, PHP, Javascript, Fluent English",
+        "Company": "2GIS",
+        "Position": "Junior Backend Web Developer",
+        "InvitationAccepted": "false",
+        "AcceptionDate": "",
+        "Note": "",
+        "Checked": "false"
+      },
+      {
+        "id": "c4",
+        "GroupID": "6",
+        "FullName": "Ветер Иванович Свежий",
+        "ProfileURI": "https://www.linkedin.com/in/gerasim-gerasimov-b55936a5/",
+        "Skills": "Node.JS, Vue.JS, PHP, Javascript, Fluent English",
+        "Company": "2GIS",
+        "Position": "Junior Backend Web Developer",
+        "InvitationAccepted": "false",
+        "AcceptionDate": "",
+        "Note": "",
+        "Checked": "false"
+      },
+      {
+        "id": "c5",
+        "GroupID": "6",
+        "FullName": "Сергей Иванович Наместников",
+        "ProfileURI": "https://www.linkedin.com/in/gerasim-gerasimov-b55936a5/",
+        "Skills": "Node.JS, Vue.JS, PHP, Javascript, Fluent English",
+        "Company": "2GIS",
+        "Position": "Junior Backend Web Developer",
+        "InvitationAccepted": "false",
+        "AcceptionDate": "",
+        "Note": "",
+        "Checked": "false"
+      }
+    ]
+}

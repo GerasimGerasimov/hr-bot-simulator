@@ -1,0 +1,16 @@
+{
+  "name": "jsonemulator",
+  "version": "1.0.0",
+  "description": "json emulator",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Gerasim",
+  "license": "MIT",
+  "dependencies": {
+    "base64url": "^3.0.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}

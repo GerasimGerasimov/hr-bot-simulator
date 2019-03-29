@@ -40,6 +40,7 @@ function getFirstKeyValue (o) {
     }
 }
 
+let userToken = ''
 
 app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -58,12 +59,28 @@ app.get("/", (request, response) => {
 });
 */
 
+function checkBasicAuth(request) {
+    console.log(request.headers.authorization)
+    let s = request.headers.authorization.split(' ')
+    if ((s[0] === 'Basic') && (s.length > 0)) {
+        s = s[1]
+        console.log(s = base64url.decode(s))
+        return true
+    } else {
+        return false
+    }
+}
 //Аутентификация
 app.post('/v1/auth/', (request, response) => {
     console.log('/v1/auth/')
+    if (!checkBasicAuth(request)) {
+        response.status(404).send('Auth header format error. Basic not found')
+        return
+    }
+    userToken = randomStringAsBase64Url(20)//'$pbkdf2-sha256$29000$f08JgfCek5LyvheCkHKudQ$cwvMrFYk1J/RgRSWyQgLMlv3RAniCy4dy.lT0cTd87s'
     const data = {
         data: {
-            token: randomStringAsBase64Url(20)//'$pbkdf2-sha256$29000$f08JgfCek5LyvheCkHKudQ$cwvMrFYk1J/RgRSWyQgLMlv3RAniCy4dy.lT0cTd87s'
+            token: userToken
         },
         succses: true
     }
@@ -73,7 +90,10 @@ app.post('/v1/auth/', (request, response) => {
 //Получение данных о группах пользователя
 app.get('/v1/data/users/', (request, response) => {
     console.log('/v1/data/users/')
-    //console.log(request)
+    if (!checkBasicAuth(request)) {
+        response.status(404).send('Auth header format error. Basic not found')
+        return
+    }
     // отправляем ответ
     fs.readFile('data/groups.json', {encoding: 'utf-8'})
     .then (data => JSON.parse(data))//полученные из файла данные превратил в JSON

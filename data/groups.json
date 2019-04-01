@@ -1,16 +1,9 @@
 {
-	"groups":[
-      {
-        "id": "1",
+	"groups":{
+    "data/groups/1":{
+        "candidates_count": "5",
         "GroupName": "Яндекс. Отдел тестирования",
         "Created": "11.12.2018",
-        "Candidates": [
-          "c1",
-          "c2",
-          "c3",
-          "c4",
-          "c5"
-        ],
         "SearchParams": "",
         "MessageTemplate": " Здравствуйте $CandidateName! Я рекрутёр $UserName. Ищу специалиста для работы в $Owner на должности $Position.Прошу принять моё приглашение. С уважением,  $UserName.",
         "Circles": "1,2",
@@ -23,17 +16,10 @@
         "Exceptions": "HR, Директор, Manager, CEO",
         "Visible": "true"
       },
-      {
-        "id": "2",
+      "data/groups/2":{
+        "candidates_count": "5",
         "GroupName": "Akvelon. Junior Java Developer",
         "Created": "11.10.2018",
-        "Candidates": [
-          "c1",
-          "c2",
-          "c3",
-          "c4",
-          "c5"
-        ],
         "SearchParams": "",
         "MessageTemplate": " Здравствуйте $CandidateName! Я рекрутёр $UserName. Ищу специалиста для работы в $Owner на должности $Position.Прошу принять моё приглашение. С уважением,  $UserName.",
         "Circles": "1,2",
@@ -46,16 +32,10 @@
         "Exceptions": "HR, Директор, Manager, CEO",
         "Visible": "true"
       },
-      {
-        "id": "3",
+      "data/groups/3":{
+        "candidates_count": "4",
         "GroupName": "Инсис. Full-stack разработчик",
         "Created": "11.10.2018",
-        "Candidates": [
-          "c1",
-          "c2",
-          "c3",
-          "c4"
-        ],
         "SearchParams": "",
         "MessageTemplate": "Здравствуйте $CandidateName! Я рекрутёр $UserName. Ищу специалиста для работы в $Owner на должности $Position.Прошу принять моё приглашение. С уважением,  $UserName.",
         "Circles": "1,2",
@@ -68,17 +48,10 @@
         "Exceptions": "HR, Директор, Manager, CEO",
         "Visible": "true"
       },
-      {
-        "id": "4",
+      "data/groups/4":{
+        "candidates_count": "5",
         "GroupName": "Alawar. Руководитель отдела тестирования",
         "Created": "09.09.2018",
-        "Candidates": [
-          "c1",
-          "c2",
-          "c3",
-          "c4",
-          "c5"
-        ],
         "SearchParams": "",
         "MessageTemplate": "Здравствуйте $CandidateName! Я рекрутёр $UserName. Ищу специалиста для работы в $Owner на должности $Position.Прошу принять моё приглашение. С уважением,  $UserName.",
         "Circles": "1,2",
@@ -91,17 +64,10 @@
         "Exceptions": "HR, Директор, Manager, CEO",
         "Visible": "true"
       },
-      {
-        "id": "5",
+      "data/groups/5":{
+        "candidates_count": "5",
         "GroupName": "El Machine. IOS Developer",
         "Created": "10.09.2018",
-        "Candidates": [
-          "c1",
-          "c2",
-          "c3",
-          "c4",
-          "c5"
-        ],
         "SearchParams": "",
         "MessageTemplate": " Здравствуйте $CandidateName! Я рекрутёр $UserName. Ищу специалиста для работы в $Owner на должности $Position.Прошу принять моё приглашение. С уважением,  $UserName.",
         "Circles": "1,2",
@@ -114,17 +80,10 @@
         "Exceptions": "HR, Директор, Manager, CEO",
         "Visible": "true"
       },
-      {
-        "id": "6",
+      "data/groups/6":{
+        "candidates_count": "5",
         "GroupName": "Эдвэнсд Онлайн. Junior Backend Web Developer",
         "Created": "10.09.2018",
-        "Candidates": [
-          "c1",
-          "c2",
-          "c3",
-          "c4",
-          "c5"
-        ],
         "SearchParams": "",
         "MessageTemplate": " Здравствуйте $CandidateName! Я рекрутёр $UserName. Ищу специалиста для работы в $Owner на должности $Position.Прошу принять моё приглашение. С уважением,  $UserName.",
         "Circles": "1,2",
@@ -137,17 +96,10 @@
         "Exceptions": "HR, Директор, Manager, CEO",
         "Visible": "true"
       },
-      {
-        "id": "7",
+      "data/groups/7":{
+        "candidates_count": "5",
         "GroupName": "SibMosaic. Стажер департамента IT",
         "Created": "10.08.2018",
-        "Candidates": [
-          "c1",
-          "c2",
-          "c3",
-          "c4",
-          "c5"
-        ],
         "SearchParams": "",
         "MessageTemplate": " Здравствуйте $CandidateName! Я рекрутёр $UserName. Ищу специалиста для работы в $Owner на должности $Position.Прошу принять моё приглашение. С уважением,  $UserName.",
         "Circles": "1,2",
@@ -160,11 +112,10 @@
         "Exceptions": "HR, Директор, Manager, CEO",
         "Visible": "true"
       },
-      {
-        "id": "8",
+      "data/groups/8":{
+        "candidates_count": "0",
         "GroupName": "Яндекс. Разработчик в команду контент-системы",
         "Created": "10.08.2018",
-        "Candidates": [],
         "SearchParams": "",
         "MessageTemplate": " Здравствуйте $CandidateName! Я рекрутёр $UserName. Ищу специалиста для работы в $Owner на должности $Position.Прошу принять моё приглашение. С уважением,  $UserName.",
         "Circles": "1,2",
@@ -177,5 +128,5 @@
         "Exceptions": "HR, Директор, Manager, CEO",
         "Visible": "true"
       }
-    ]
+  }
 }

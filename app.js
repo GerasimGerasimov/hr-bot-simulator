@@ -87,6 +87,28 @@ app.post('/v1/auth/', (request, response) => {
     response.json(JSON.parse(JSON.stringify(data)))
 })
 
+
+app.get('/v1/data/users/', (request, response) => {
+    console.log('/v1/data/users/')
+    if (!checkBasicAuth(request)) {
+        response.status(404).send('Auth header format error. Basic not found')
+        return
+    }
+    // отправляем ответ
+    fs.readFile('data/groups.json', {encoding: 'utf-8'})
+    .then (data=> JSON.parse(data))//полученные из файла данные превратил в JSON
+    .then (data => {
+        const groups = {
+            data
+        }
+        response.json(groups)
+    })
+    .catch (error => {
+        console.error(error)
+        response.status(404).send(`Get group data error:${error}`)
+    })
+})
+/*
 //Получение данных о группах пользователя
 app.get('/v1/data/users/', (request, response) => {
     console.log('/v1/data/users/')
@@ -123,6 +145,7 @@ app.get('/v1/data/users/', (request, response) => {
         response.status(404).send(`Get group data error:${error}`)
     })
 })
+*/
 
 //http://localhost:3000/groups/ возвращает массив всех элементов
 //http://localhost:3000/groups/?id=1 - возвращает массив с одним элементом у которого id = 1

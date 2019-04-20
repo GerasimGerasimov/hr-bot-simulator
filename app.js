@@ -9,38 +9,17 @@ const base64url = require('base64url')
 const app = express()
 console.log('app start')
 
-
 function randomStringAsBase64Url(size) {
     return base64url(crypto.randomBytes(size));
   }
 
-//получаю массив объектов key:value
-function getConditionsList(o) {
-    let arr=[]
-    for (key in o) {
-        arr.push({key, value:o[key]})
-    }   
-    return arr
-}
-
-//проверка есть ли в объекте item поля со значениями как в conditionsList
-//если есть от возвращаю true для фильтрации
-//(если нет соответсвия или соответсвие на полное то false)
-function getMatched(item, conditionsList) {
-    let result = 0;
-    conditionsList.forEach(element => {
-        if (item[element.key] == element.value) result++
-    });
-    return (result == conditionsList.length)
-}
-
-function getFirstKeyValue (o) {
-    for (key in o) {
-        return ({key, value:o[key]})
-    }
-}
-
 let userToken = ''
+
+// parse application/json
+//app.use(bodyParser.json())
+
+// create application/json parser
+var jsonParser = bodyParser.json()
 
 app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -50,6 +29,8 @@ app.all('*', function(req, res, next) {
 });
 
 //app.use(bodyParser.urlencoded({ extended: true }))
+
+
 // определяем обработчик для маршрута "/"
 /*
 app.get("/", (request, response) => {
@@ -59,7 +40,8 @@ app.get("/", (request, response) => {
 });
 */
 
-function checkBasicAuth(request) {
+
+checkBasicAuth = (request) => {
     console.log(request.headers.authorization)
     let s = request.headers.authorization.split(' ')
     if ((s[0] === 'Basic') && (s.length > 0)) {
@@ -108,7 +90,87 @@ app.get('/v1/data/users/', (request, response) => {
         response.status(404).send(`Get group data error:${error}`)
     })
 })
+
+//В request.path получаю строку вида "/v1/data/groups/3/"
+//я должен её превратить в "data/groups/3"
+//Убрать всё до data и последний слэш
+//это будет название объекта
+getGroupNameFromPath = (uri) =>{
+    let res = uri.substring(0, uri.length - 1);//удаляю последний слэш
+    let i = res.match(/data/i)
+    res = res.substring(i.index, res.length)
+    return res
+}
+
+app.put('/v1/data/groups/:id', jsonParser, (request, response) => {
+    console.log('request=>',request)
+    if (!checkBasicAuth(request)) {
+        response.status(404).send('Auth header format error. Basic not found')
+        return
+    }
+    // готовим ответ
+    fs.readFile('data/groups.json', {encoding: 'utf-8'})//прочитал весь файл
+    .then (data=> JSON.parse(data))//полученные из файла данные превратил в JSON
+    .then (data => {//а из JSON в объект
+        const groups = {
+            data
+        }
+        console.log('groups=>',groups)
+        //в request.query заданы критерии фильтрации (поле и его значение)
+        console.log('request.body=>',request.body)
+        let changes = {}
+        Object.assign(changes,request.body)
+        console.log('changes:',changes)
+        //В request.path получаю строку вида "/v1/data/groups/3/"
+        //я должен её превратить в "data/groups/3"
+        const groupName = getGroupNameFromPath(request.path) //получаю название объекта
+        console.log('groupName', groupName)
+        let group = groups.data.Groups[groupName]//получаю группу и
+        console.log('group before:', group)
+        //теперь можно слить группу и её изменения
+        Object.assign(group, changes)//изменения внесены
+        console.log('group after:', group)
+        //теперь надо записать изменения в файл
+    fs.writeFile('data/groups.json',
+                    JSON.stringify(groups.data, null, 2),
+                        'utf8')
+    .then   (response.json(group))
+    })
+    .catch (error => {
+        console.error(error)
+        response.status(404).send(`Get group data error:${error}`)
+    })
+})
+// начинаем прослушивать подключения на 3000 порту
+app.listen(5000)
+
 /*
+//получаю массив объектов key:value
+function getConditionsList(o) {
+    let arr=[]
+    for (key in o) {
+        arr.push({key, value:o[key]})
+    }   
+    return arr
+}
+
+//проверка есть ли в объекте item поля со значениями как в conditionsList
+//если есть от возвращаю true для фильтрации
+//(если нет соответсвия или соответсвие на полное то false)
+function getMatched(item, conditionsList) {
+    let result = 0;
+    conditionsList.forEach(element => {
+        if (item[element.key] == element.value) result++
+    });
+    return (result == conditionsList.length)
+}
+
+function getFirstKeyValue (o) {
+    for (key in o) {
+        return ({key, value:o[key]})
+    }
+}
+
 //Получение данных о группах пользователя
 app.get('/v1/data/users/', (request, response) => {
     console.log('/v1/data/users/')
@@ -176,5 +238,27 @@ app.get("/groups/*", (request, response) => {
         })
 });
 */
-// начинаем прослушивать подключения на 3000 порту
-app.listen(5000)
+
+/*
+function doENTRY(action){
+    return `${action}:42`
+}
+
+function doDEL(action){
+    return `${action}:43`
+}
+
+function applyAction(action) {
+    console.log('applyAction:Action:', action)
+    let doAction = {
+        //'ENTRY': function () {return '42'},
+        //'DEL'  : function () {return '43'}
+        'ENTRY': doENTRY,
+        'DEL'  : doDEL
+    }
+    return doAction[action](action)
+}
+
+console.log(applyAction('ENTRY'))
+console.log(applyAction('DEL'))
+*/

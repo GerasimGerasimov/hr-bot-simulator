@@ -141,6 +141,42 @@ app.put('/v1/data/groups/:id', jsonParser, (request, response) => {
         response.status(404).send(`Get group data error:${error}`)
     })
 })
+
+app.delete('/v1/data/groups/:id', (request, response) => {
+    console.log('request=>',request)
+    if (!checkBasicAuth(request)) {
+        response.status(404).send('Auth header format error. Basic not found')
+        return
+    }
+    // готовим ответ
+    fs.readFile('data/groups.json', {encoding: 'utf-8'})//прочитал весь файл
+    .then (data=> JSON.parse(data))//полученные из файла данные превратил в JSON
+    .then (data => {//а из JSON в объект
+        const groups = {
+            data
+        }
+        //В request.path получаю строку вида "/v1/data/groups/3/"
+        //я должен её превратить в "data/groups/3"
+        const groupName = getGroupNameFromPath(request.path) //получаю название объекта
+        console.log('DELETE group', groupName)
+        if (groups.data.Groups[groupName] === undefined)//удаляю
+            throw new Error('DELETE_GROUP failed - group not found')//поднимаю исключение выше
+
+        delete groups.data.Groups[groupName]//удаляю
+        //теперь надо записать изменения в файл
+    fs.writeFile('data/groups.json',
+                    JSON.stringify(groups.data, null, 2),
+                        'utf8')
+    .then   (response.json({
+                            "message": "Group was removed",
+                            "success": true
+            }))
+    })
+    .catch (error => {
+        console.error(error)
+        response.status(404).send(`Delete group error:${error}`)
+    })
+})
 // начинаем прослушивать подключения на 3000 порту
 app.listen(5000)
 

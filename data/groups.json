@@ -1,7 +1,7 @@
 {
 	"Groups":{
     "data/groups/1":{
-        "candidates_count": "5",
+        "CandidatesCount": "0",
         "GroupName": "Яндекс. Отдел тестирования",
         "Created": "11.12.2018",
         "SearchParams": "",
@@ -17,7 +17,17 @@
         "Visible": true
       },
       "data/groups/2":{
-        "candidates_count": "5",
+        "CandidatesCount": "8",
+        "Candidates":{
+          "1":"data/candidates/1",
+          "2":"data/candidates/2",
+          "3":"data/candidates/3",
+          "4":"data/candidates/4",
+          "5":"data/candidates/5",
+          "6":"data/candidates/6",
+          "7":"data/candidates/7",
+          "8":"data/candidates/8"         
+        },
         "GroupName": "Akvelon. Junior Java Developer",
         "Created": "11.10.2018",
         "SearchParams": "",
@@ -33,7 +43,13 @@
         "Visible": false
       },
       "data/groups/3":{
-        "candidates_count": "4",
+        "CandidatesCount": "4",
+        "Candidates":{
+          "1":"data/candidates/1",
+          "2":"data/candidates/2",
+          "3":"data/candidates/3",
+          "4":"data/candidates/4"
+        },        
         "GroupName": "Инсис. Full-stack разработчик",
         "Created": "11.10.2018",
         "SearchParams": "",
@@ -49,7 +65,14 @@
         "Visible": true
       },
       "data/groups/4":{
-        "candidates_count": "5",
+        "CandidatesCount": "5",
+        "Candidates":{
+          "1":"data/candidates/1",
+          "2":"data/candidates/2",
+          "3":"data/candidates/3",
+          "4":"data/candidates/4",
+          "5":"data/candidates/5"
+        },        
         "GroupName": "Alawar. Руководитель отдела тестирования",
         "Created": "09.09.2018",
         "SearchParams": "",
@@ -65,7 +88,14 @@
         "Visible": false
       },
       "data/groups/5":{
-        "candidates_count": "5",
+        "CandidatesCount": "5",
+        "Candidates":{
+          "1":"data/candidates/8",
+          "2":"data/candidates/7",
+          "3":"data/candidates/3",
+          "4":"data/candidates/4",
+          "5":"data/candidates/5"
+        },        
         "GroupName": "El Machine. IOS Developer",
         "Created": "10.09.2018",
         "SearchParams": "",
@@ -81,7 +111,14 @@
         "Visible": true
       },
       "data/groups/6":{
-        "candidates_count": "5",
+        "CandidatesCount": "5",
+        "Candidates":{
+          "1":"data/candidates/8",
+          "2":"data/candidates/7",
+          "3":"data/candidates/3",
+          "4":"data/candidates/4",
+          "5":"data/candidates/5"
+        },         
         "GroupName": "Эдвэнсд Онлайн. Junior Backend Web Developer",
         "Created": "10.09.2018",
         "SearchParams": "",
@@ -97,7 +134,14 @@
         "Visible": true
       },
       "data/groups/7":{
-        "candidates_count": "5",
+        "CandidatesCount": "5",
+        "Candidates":{
+          "1":"data/candidates/8",
+          "2":"data/candidates/7",
+          "3":"data/candidates/3",
+          "4":"data/candidates/4",
+          "5":"data/candidates/5"
+        },         
         "GroupName": "SibMosaic. Стажер департамента IT",
         "Created": "10.08.2018",
         "SearchParams": "",
@@ -113,7 +157,7 @@
         "Visible": true
       },
       "data/groups/8":{
-        "candidates_count": "0",
+        "CandidatesCount": "0",
         "GroupName": "Яндекс. Разработчик в команду контент-системы",
         "Created": "10.08.2018",
         "SearchParams": "",

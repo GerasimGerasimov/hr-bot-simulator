@@ -1,69 +1,100 @@
 {
-	[
-      {
-        "id": "c1",
-        "GroupID": "1",
-        "FullName": "Петя Иванов",
-        "ProfileURI": "https://www.linkedin.com/in/gerasim-gerasimov-b55936a5/",
-        "Skills": "Bamboo, Java, Swift, Expresso, XCUITest, white box testing, integration testing, API testing, Fluent English",
-        "Company": "Site Studio",
-        "Position": "Senior Test Automation Engineer (Java)",
-        "InvitationAccepted": "true",
-        "AcceptionDate": "12.10.2018",
-        "Note": "Адекватный",
-        "Checked": "true"
+	"data": {
+		"data/candidates/1": {
+			"ID": 1,
+			"Group": 1,
+			"FullName": "Петя Иванов",
+			"ProfileURI": "https://www.linkedin.com/in/gerasim-gerasimov-b55936a5/",
+			"Company": "Site Studio",
+			"Position": "Senior Test Automation Engineer (Java)",
+			"Status":"Added",
+			"StatusDate": "12.10.2018",
+			"Note": "Адекватный",
+			"Checked": true
+		  },
+      "data/candidates/2": {
+			"ID": 2,
+			"Group": 1,
+			"FullName": "Петя Петров",
+			"ProfileURI": "https://www.linkedin.com/in/gerasim-gerasimov-b55936a5/",
+			"Company": "Cissco",
+			"Position": "QA Lead (Java)",
+			"Status":"Added",
+			"StatusDate": "12.10.2018",
+			"Note": "",
+			"Checked": false		
       },
-      {
-        "id": "c2",
-        "GroupID": "1",
-        "FullName": "Петя Петров",
-        "ProfileURI": "https://www.linkedin.com/in/gerasim-gerasimov-b55936a5/",
-        "Skills": " Bamboo, Java, Swift, XCUITest, white box testing, integration testing, API testing, Fluent English",
-        "Company": "Cissco",
-        "Position": "QA Lead (Java)",
-        "InvitationAccepted": "false",
-        "AcceptionDate": "",
-        "Note": "",
-        "Checked": "false"
+      "data/candidates/3": {
+			"ID": 3,
+			"Group": 1,
+			"FullName": "Ветер Иванович Свежий",
+			"ProfileURI": "https://www.linkedin.com/in/gerasim-gerasimov-b55936a5/",
+			"Company": "2GIS",
+			"Position": "Junior Backend Web Developer",
+			"Status":"Added",
+			"StatusDate": "12.10.2018",
+			"Note": "",
+			"Checked": false		
       },
-      {
-        "id": "c3",
-        "GroupID": "1",
-        "FullName": "Ветер Иванович Свежий",
-        "ProfileURI": "https://www.linkedin.com/in/gerasim-gerasimov-b55936a5/",
-        "Skills": " Node.JS, Vue.JS, PHP, Javascript, Fluent English",
-        "Company": "2GIS",
-        "Position": "Junior Backend Web Developer",
-        "InvitationAccepted": "false",
-        "AcceptionDate": "",
-        "Note": "",
-        "Checked": "false"
+      "data/candidates/4": {	
+			"ID": 4,
+			"Group": 1,
+			"FullName": "Иванов Свежий Ветрович",
+			"ProfileURI": "https://www.linkedin.com/in/gerasim-gerasimov-b55936a5/",
+			"Company": "1С-Битрикс",
+			"Position": "Middle Backend Web Developer",
+			"Status":"Added",
+			"StatusDate": "12.10.2018",
+			"Note": "",
+			"Checked": false		
       },
-      {
-        "id": "c4",
-        "GroupID": "6",
-        "FullName": "Ветер Иванович Свежий",
-        "ProfileURI": "https://www.linkedin.com/in/gerasim-gerasimov-b55936a5/",
-        "Skills": "Node.JS, Vue.JS, PHP, Javascript, Fluent English",
-        "Company": "2GIS",
-        "Position": "Junior Backend Web Developer",
-        "InvitationAccepted": "false",
-        "AcceptionDate": "",
-        "Note": "",
-        "Checked": "false"
+      "data/candidates/5": {	
+			"ID": 5,
+			"Group": 1,
+			"FullName": "Рафик Абоев",
+			"ProfileURI": "https://www.linkedin.com/in/gerasim-gerasimov-b55936a5/",
+			"Company": "НазраньГаз",
+			"Position": "Senior PHP Web Developer",
+			"Status":"Added",
+			"StatusDate": "12.10.2018",
+			"Note": "",
+			"Checked": false			
       },
-      {
-        "id": "c5",
-        "GroupID": "6",
-        "FullName": "Сергей Иванович Наместников",
-        "ProfileURI": "https://www.linkedin.com/in/gerasim-gerasimov-b55936a5/",
-        "Skills": "Node.JS, Vue.JS, PHP, Javascript, Fluent English",
-        "Company": "2GIS",
-        "Position": "Junior Backend Web Developer",
-        "InvitationAccepted": "false",
-        "AcceptionDate": "",
-        "Note": "",
-        "Checked": "false"
+      "data/candidates/6": {	
+			"ID": 6,
+			"Group": 1,
+			"FullName": "Василий Теркин",
+			"ProfileURI": "https://www.linkedin.com/in/gerasim-gerasimov-b55936a5/",
+			"Company": "ШарашМонтаж",
+			"Position": "WEB-мастер",
+			"Status":"Added",
+			"StatusDate": "12.10.2018",
+			"Note": "",
+			"Checked": false			
+      },
+      "data/candidates/7": {	
+			"ID": 8,
+			"Group": 1,
+			"FullName": "Павел Скакун",
+			"ProfileURI": "https://www.linkedin.com/in/gerasim-gerasimov-b55936a5/",
+			"Company": "СГОК",
+			"Position": "Инженер ЭТЛ",
+			"Status":"Added",
+			"StatusDate": "12.10.2018",
+			"Note": "",
+			"Checked": true			
+      },
+      "data/candidates/8": {	
+			"ID": 8,
+			"Group": 1,
+			"FullName": "Кирилл Аккуратов",
+			"ProfileURI": "https://www.linkedin.com/in/gerasim-gerasimov-b55936a5/",
+			"Company": "Ковдорский ГОК",
+			"Position": "Начальник группы АСУ",
+			"Status":"Added",
+			"StatusDate": "12.10.2018",
+			"Note": "",
+			"Checked": false			
       }
-    ]
+    }
 }

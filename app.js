@@ -177,6 +177,69 @@ app.delete('/v1/data/groups/:id', (request, response) => {
         response.status(404).send(`Delete group error:${error}`)
     })
 })
+
+
+//Аутентификация
+app.post('/v1/auth/', (request, response) => {
+    console.log('/v1/auth/')
+    if (!checkBasicAuth(request)) {
+        response.status(404).send('Auth header format error. Basic not found')
+        return
+    }
+    userToken = randomStringAsBase64Url(20)//'$pbkdf2-sha256$29000$f08JgfCek5LyvheCkHKudQ$cwvMrFYk1J/RgRSWyQgLMlv3RAniCy4dy.lT0cTd87s'
+    const data = {
+        data: {
+            token: userToken
+        },
+        succses: true
+    }
+    response.json(JSON.parse(JSON.stringify(data)))
+})
+
+//Получение данных Группы
+app.get('/v1/data/groups/:id', (request, response) => {
+    console.log('/v1/data/groups/')
+    if (!checkBasicAuth(request)) {
+        response.status(404).send('Auth header format error. Basic not found')
+        return
+    }
+    // готовлю
+    fs.readFile('data/groups.json', {encoding: 'utf-8'})
+    .then (data=> JSON.parse(data))//полученные из файла данные превратил в JSON
+    .then (data => {
+        const GroupPath = getGroupNameFromPath(request.path) //получаю название объекта
+        console.log('GET Group', GroupPath)
+        let Group = data.Groups[GroupPath]
+        response.json(Group)
+    })
+    .catch (error => {
+        console.error(error)
+        response.status(404).send(`Get Group data error:${error}`)
+    })
+})
+
+//Получение данных Кандидата
+app.get('/v1/data/candidates/:id', (request, response) => {
+    console.log('/v1/data/candidates/')
+    if (!checkBasicAuth(request)) {
+        response.status(404).send('Auth header format error. Basic not found')
+        return
+    }
+    // готовлю
+    fs.readFile('data/candidates.json', {encoding: 'utf-8'})
+    .then (data=> JSON.parse(data))//полученные из файла данные превратил в JSON
+    .then (data => {
+        const CandidatePath = getGroupNameFromPath(request.path) //получаю название объекта
+        console.log('GET Candidate', CandidatePath)
+        let Candidate = data.data[CandidatePath]
+        response.json(Candidate)
+    })
+    .catch (error => {
+        console.error(error)
+        response.status(404).send(`Get Candidate data error:${error}`)
+    })
+})
+
 // начинаем прослушивать подключения на 3000 порту
 app.listen(5000)
 

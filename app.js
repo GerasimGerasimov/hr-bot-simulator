@@ -102,6 +102,7 @@ getGroupNameFromPath = (uri) =>{
     return res
 }
 
+//запись изменения в группу
 app.put('/v1/data/groups/:id', jsonParser, (request, response) => {
     console.log('request=>',request)
     if (!checkBasicAuth(request)) {
@@ -142,6 +143,7 @@ app.put('/v1/data/groups/:id', jsonParser, (request, response) => {
     })
 })
 
+//удаление группы
 app.delete('/v1/data/groups/:id', (request, response) => {
     console.log('request=>',request)
     if (!checkBasicAuth(request)) {
@@ -239,6 +241,62 @@ app.get('/v1/data/candidates/:id', (request, response) => {
         response.status(404).send(`Get Candidate data error:${error}`)
     })
 })
+
+function PromiseTimeout(delayms) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(()=>{console.log('таймер сработал!!!')}, delayms);
+    });
+}
+
+const delay = t => new Promise(resolve => setTimeout(resolve, t));
+
+//запись изменений данных Кандидата
+app.put('/v1/data/candidates/:id', jsonParser, (request, response) => {
+    console.log('request=>',request)
+    if (!checkBasicAuth(request)) {
+        response.status(404).send('Auth header format error. Basic not found')
+        return
+    }
+    // готовим ответ
+    delay(1000)//задержка перед ответом
+    .then (()=>{  
+    fs.readFile('data/candidates.json', {encoding: 'utf-8'})//прочитал весь файл
+    .then (data=> JSON.parse(data))//полученные из файла данные превратил в JSON
+    .then (data => {//а из JSON в объект
+        const Candidates = {
+            data
+        }
+        console.log('Candidates:',Candidates)
+        //в request.query заданы критерии фильтрации (поле и его значение)
+        console.log('request.body=>',request.body)
+        let changes = {}
+        Object.assign(changes,request.body)
+        //console.log('changes:',changes)
+        //В request.path получаю строку вида "/v1/data/candidates/3/"
+        //я должен её превратить в "data/candidates/3"
+        const candidateName = getGroupNameFromPath(request.path) //получаю название объекта
+        console.log('candidateName', candidateName)
+        let Candidate = Candidates.data.data[candidateName]//получаю кандидата и
+        //теперь можно слить группу и её изменения
+        Object.assign(Candidate, changes)//изменения внесены
+        console.log('Candidate after:', Candidate)
+        //теперь надо записать изменения в файл
+        return {Candidates, Candidate}
+    })
+    .then (({Candidates, Candidate})=>
+                {  
+                fs.writeFile('data/candidates.json',
+                    JSON.stringify(Candidates.data, null, 2),
+                        'utf8')              
+                .then(response.json(Candidate))
+            })
+        }) 
+    .catch (error => {
+        console.error(error)
+        response.status(404).send(`Get Candidate data error:${error}`)
+    })
+})
+
 
 // начинаем прослушивать подключения на 3000 порту
 app.listen(5000)

@@ -96,7 +96,9 @@ app.get('/v1/data/users/', (request, response) => {
 //Убрать всё до data и последний слэш
 //это будет название объекта
 getGroupNameFromPath = (uri) =>{
-    let res = uri.substring(0, uri.length - 1);//удаляю последний слэш
+    //если в конце есть слэш то его надо удалить
+    let res = (uri[uri.length-1] === '/')?uri.substring(0, uri.length - 1):uri
+    //let res = uri.substring(0, uri.length - 1);//удаляю последний слэш
     let i = res.match(/data/i)
     res = res.substring(i.index, res.length)
     return res
@@ -211,8 +213,13 @@ app.get('/v1/data/groups/:id', (request, response) => {
     .then (data => {
         const GroupPath = getGroupNameFromPath(request.path) //получаю название объекта
         console.log('GET Group', GroupPath)
-        let Group = data.Groups[GroupPath]
-        response.json(Group)
+        let group = data.Groups[GroupPath]
+        let result = {
+            data: {
+                [GroupPath]:group
+            }
+        }
+        response.json(result)
     })
     .catch (error => {
         console.error(error)
@@ -258,7 +265,7 @@ app.put('/v1/data/candidates/:id', jsonParser, (request, response) => {
         return
     }
     // готовим ответ
-    delay(1000)//задержка перед ответом
+    delay(500)//задержка перед ответом
     .then (()=>{  
     fs.readFile('data/candidates.json', {encoding: 'utf-8'})//прочитал весь файл
     .then (data=> JSON.parse(data))//полученные из файла данные превратил в JSON

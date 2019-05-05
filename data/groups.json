@@ -1,21 +1,5 @@
 {
   "Groups": {
-    "data/groups/1": {
-      "CandidatesCount": "0",
-      "GroupName": "Яндекс. Отдел тестирования",
-      "Created": "11.12.2018",
-      "SearchParams": "",
-      "MessageTemplate": " Здравствуйте $CandidateName! Я рекрутёр $UserName. Ищу специалиста для работы в $Owner на должности $Position.Прошу принять моё приглашение. С уважением,  $UserName.",
-      "Circles": "1,2",
-      "Owner": "Julia",
-      "Employer": "Яндекс",
-      "Position": "Ведущий инженер по автоматизации тестирования / Senior Test Automation Engineer (Java)",
-      "Skills": "Bamboo, Java, Swift, Expresso, XCUITest, white box testing, integration testing, API testing, Fluent English",
-      "Location": "Москва, Санкт-Петербург",
-      "Title": "SDET (Инженер автоматизированного тестирования), Ведущий инженер по автоматизации тестирования, Senior Test Automation Engineer (Java)",
-      "Exceptions": "HR, Директор, Manager, CEO",
-      "Visible": true
-    },
     "data/groups/2": {
       "CandidatesCount": 499,
       "Candidates": {
@@ -532,7 +516,7 @@
       "Location": "Иваново",
       "Title": "Junior Java Developer",
       "Exceptions": "HR, Директор, Manager, CEO",
-      "Visible": false
+      "Visible": true
     },
     "data/groups/3": {
       "CandidatesCount": "4",
@@ -577,7 +561,7 @@
       "Location": "Новосибирск",
       "Title": "Руководитель отдела тестирования, QA Lead",
       "Exceptions": "HR, Директор, Manager, CEO",
-      "Visible": false
+      "Visible": true
     },
     "data/groups/5": {
       "CandidatesCount": "5",
@@ -600,7 +584,7 @@
       "Location": "Москва",
       "Title": "IOS Developer",
       "Exceptions": "HR, Директор, Manager, CEO",
-      "Visible": false
+      "Visible": true
     },
     "data/groups/6": {
       "CandidatesCount": "5",
@@ -623,7 +607,7 @@
       "Location": "Москва",
       "Title": "Junior Backend Web Developer",
       "Exceptions": "HR, Директор, Manager, CEO",
-      "Visible": false
+      "Visible": true
     },
     "data/groups/7": {
       "CandidatesCount": "5",
@@ -646,7 +630,7 @@
       "Location": "Новосибирск",
       "Title": "Стажер департамента IT",
       "Exceptions": "HR, Директор, Manager, CEO",
-      "Visible": false
+      "Visible": true
     },
     "data/groups/8": {
       "CandidatesCount": "0",
@@ -662,7 +646,7 @@
       "Location": "Новосибирск",
       "Title": "Разработчик в команду контент-системы",
       "Exceptions": "HR, Директор, Manager, CEO",
-      "Visible": false
+      "Visible": true
     }
   }
 }

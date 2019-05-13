@@ -563,29 +563,6 @@
       "Exceptions": "HR, Директор, Manager, CEO",
       "Visible": true
     },
-    "data/groups/5": {
-      "CandidatesCount": "5",
-      "Candidates": {
-        "1": "data/candidates/8",
-        "2": "data/candidates/7",
-        "3": "data/candidates/3",
-        "4": "data/candidates/4",
-        "5": "data/candidates/5"
-      },
-      "GroupName": "El Machine. IOS Developer",
-      "Created": "10.09.2018",
-      "SearchParams": "",
-      "MessageTemplate": " Здравствуйте $CandidateName! Я рекрутёр $UserName. Ищу специалиста для работы в $Owner на должности $Position.Прошу принять моё приглашение. С уважением,  $UserName.",
-      "Circles": "1,2",
-      "Owner": "Julia",
-      "Employer": "El Machine",
-      "Position": "IOS Developer",
-      "Skills": "CocоaPods, AFNetworking, BlocksKit, Facebook-iOS-SDK, FlurrySDK, MagicalRecord, SDWebImage, UrbanAirship-iOS-SDK, Vk-iOS-SDK, AVFoundation, CoreAudio, CoreData, CoreLocation, MapKit, Objc/runtime, QuartzCore, StoreKi, HTTP, REST, JSON, XML",
-      "Location": "Москва",
-      "Title": "IOS Developer",
-      "Exceptions": "HR, Директор, Manager, CEO",
-      "Visible": true
-    },
     "data/groups/6": {
       "CandidatesCount": "5",
       "Candidates": {

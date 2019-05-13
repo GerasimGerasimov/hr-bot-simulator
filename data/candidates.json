@@ -46,7 +46,7 @@
       "Status": "PrivateMessageRespond",
       "StatusDate": "3.05.2019",
       "Note": "В поиске работы",
-      "Checked": true
+      "Checked": false
     },
     "data/candidates/4": {
       "ID": 0,
@@ -58,7 +58,7 @@
       "Status": "InvitationAccepted",
       "StatusDate": "3.05.2019",
       "Note": "Адекватный",
-      "Checked": false
+      "Checked": true
     },
     "data/candidates/5": {
       "ID": 0,
@@ -82,7 +82,7 @@
       "Status": "Added",
       "StatusDate": "3.05.2019",
       "Note": "Не ищет работу",
-      "Checked": false
+      "Checked": true
     },
     "data/candidates/7": {
       "ID": 0,

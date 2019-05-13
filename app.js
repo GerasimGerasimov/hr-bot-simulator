@@ -28,6 +28,7 @@ app.all('*', function(req, res, next) {
     next();
 });
 
+app.use(express.static('dist'));
 //app.use(bodyParser.urlencoded({ extended: true }))
 
 
@@ -273,7 +274,7 @@ app.put('/v1/data/candidates/:id', jsonParser, (request, response) => {
         const Candidates = {
             data
         }
-        console.log('Candidates:',Candidates)
+        //console.log('Candidates:',Candidates)
         //в request.query заданы критерии фильтрации (поле и его значение)
         console.log('request.body=>',request.body)
         let changes = {}
@@ -282,11 +283,11 @@ app.put('/v1/data/candidates/:id', jsonParser, (request, response) => {
         //В request.path получаю строку вида "/v1/data/candidates/3/"
         //я должен её превратить в "data/candidates/3"
         const candidateName = getGroupNameFromPath(request.path) //получаю название объекта
-        console.log('candidateName', candidateName)
+        //console.log('candidateName', candidateName)
         let Candidate = Candidates.data.data[candidateName]//получаю кандидата и
         //теперь можно слить группу и её изменения
         Object.assign(Candidate, changes)//изменения внесены
-        console.log('Candidate after:', Candidate)
+        //console.log('Candidate after:', Candidate)
         //теперь надо записать изменения в файл
         return {Candidates, Candidate}
     })

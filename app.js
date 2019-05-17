@@ -43,7 +43,7 @@ app.get("/", (request, response) => {
 
 
 checkBasicAuth = (request) => {
-    console.log(request.headers.authorization)
+    //console.log(request.headers.authorization)
     let s = request.headers.authorization.split(' ')
     if ((s[0] === 'Basic') && (s.length > 0)) {
         s = s[1]
@@ -107,7 +107,7 @@ getGroupNameFromPath = (uri) =>{
 
 //запись изменения в группу
 app.put('/v1/data/groups/:id', jsonParser, (request, response) => {
-    console.log('request=>',request)
+    //console.log('request=>',request)
     if (!checkBasicAuth(request)) {
         response.status(404).send('Auth header format error. Basic not found')
         return
@@ -121,7 +121,7 @@ app.put('/v1/data/groups/:id', jsonParser, (request, response) => {
         }
         console.log('groups=>',groups)
         //в request.query заданы критерии фильтрации (поле и его значение)
-        console.log('request.body=>',request.body)
+        //console.log('request.body=>',request.body)
         let changes = {}
         Object.assign(changes,request.body)
         console.log('changes:',changes)
@@ -130,10 +130,10 @@ app.put('/v1/data/groups/:id', jsonParser, (request, response) => {
         const groupName = getGroupNameFromPath(request.path) //получаю название объекта
         console.log('groupName', groupName)
         let group = groups.data.Groups[groupName]//получаю группу и
-        console.log('group before:', group)
+        //console.log('group before:', group)
         //теперь можно слить группу и её изменения
         Object.assign(group, changes)//изменения внесены
-        console.log('group after:', group)
+        //console.log('group after:', group)
         //теперь надо записать изменения в файл
     fs.writeFile('data/groups.json',
                     JSON.stringify(groups.data, null, 2),
@@ -148,7 +148,7 @@ app.put('/v1/data/groups/:id', jsonParser, (request, response) => {
 
 //удаление группы
 app.delete('/v1/data/groups/:id', (request, response) => {
-    console.log('request=>',request)
+    //console.log('request=>',request)
     if (!checkBasicAuth(request)) {
         response.status(404).send('Auth header format error. Basic not found')
         return
@@ -250,23 +250,17 @@ app.get('/v1/data/candidates/:id', (request, response) => {
     })
 })
 
-function PromiseTimeout(delayms) {
-    return new Promise(function (resolve, reject) {
-        setTimeout(()=>{console.log('таймер сработал!!!')}, delayms);
-    });
-}
-
 const delay = t => new Promise(resolve => setTimeout(resolve, t));
 
 //запись изменений данных Кандидата
 app.put('/v1/data/candidates/:id', jsonParser, (request, response) => {
-    console.log('request=>',request)
+    //console.log('request=>',request)
     if (!checkBasicAuth(request)) {
         response.status(404).send('Auth header format error. Basic not found')
         return
     }
     // готовим ответ
-    delay(500)//задержка перед ответом
+    delay(50)//задержка перед ответом
     .then (()=>{  
     fs.readFile('data/candidates.json', {encoding: 'utf-8'})//прочитал весь файл
     .then (data=> JSON.parse(data))//полученные из файла данные превратил в JSON

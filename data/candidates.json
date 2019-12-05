@@ -10,7 +10,7 @@
       "Status": "InvitationAccepted",
       "StatusDate": "3.05.2019",
       "Note": "В поиске работы",
-      "Checked": true
+      "Checked": false
     },
     "data/candidates/1": {
       "ID": 0,
@@ -34,7 +34,7 @@
       "Status": "Added",
       "StatusDate": "3.05.2019",
       "Note": "",
-      "Checked": true
+      "Checked": false
     },
     "data/candidates/3": {
       "ID": 0,
@@ -46,7 +46,7 @@
       "Status": "PrivateMessageRespond",
       "StatusDate": "3.05.2019",
       "Note": "В поиске работы",
-      "Checked": true
+      "Checked": false
     },
     "data/candidates/4": {
       "ID": 0,
@@ -82,7 +82,7 @@
       "Status": "Added",
       "StatusDate": "3.05.2019",
       "Note": "Не ищет работу",
-      "Checked": true
+      "Checked": false
     },
     "data/candidates/7": {
       "ID": 0,
@@ -118,7 +118,7 @@
       "Status": "PrivateMessageRespond",
       "StatusDate": "3.05.2019",
       "Note": "",
-      "Checked": false
+      "Checked": true
     },
     "data/candidates/10": {
       "ID": 0,
@@ -130,7 +130,7 @@
       "Status": "Added",
       "StatusDate": "3.05.2019",
       "Note": "",
-      "Checked": false
+      "Checked": true
     },
     "data/candidates/11": {
       "ID": 0,
@@ -166,7 +166,7 @@
       "Status": "Added",
       "StatusDate": "3.05.2019",
       "Note": "",
-      "Checked": false
+      "Checked": true
     },
     "data/candidates/14": {
       "ID": 0,
@@ -598,7 +598,7 @@
       "Status": "Added",
       "StatusDate": "3.05.2019",
       "Note": "В поиске работы",
-      "Checked": true
+      "Checked": false
     },
     "data/candidates/50": {
       "ID": 0,

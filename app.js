@@ -240,8 +240,14 @@ app.get('/v1/data/candidates/:id', (request, response) => {
     .then (data=> JSON.parse(data))//полученные из файла данные превратил в JSON
     .then (data => {
         const CandidatePath = getGroupNameFromPath(request.path) //получаю название объекта
-        console.log('GET Candidate', CandidatePath)
-        let Candidate = data.data[CandidatePath]
+        console.log('GET Candidate', CandidatePath);
+        let content = data.data[CandidatePath]
+        if (content === undefined) throw new Error(`${CandidatePath} does not exist`)
+        let Candidate = {
+            'data':{
+                [CandidatePath]:content},
+            'success': true
+        }
         response.json(Candidate)
     })
     .catch (error => {

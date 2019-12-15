@@ -58,7 +58,7 @@
       "Status": "InvitationAccepted",
       "StatusDate": "3.05.2019",
       "Note": "Адекватный",
-      "Checked": true
+      "Checked": false
     },
     "data/candidates/5": {
       "ID": 0,
@@ -70,7 +70,7 @@
       "Status": "InvitationAccepted",
       "StatusDate": "3.05.2019",
       "Note": "В поиске работы",
-      "Checked": true
+      "Checked": false
     },
     "data/candidates/6": {
       "ID": 0,
